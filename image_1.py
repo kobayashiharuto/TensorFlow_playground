@@ -1,5 +1,5 @@
 # TensorFlow と tf.keras のインポート
-import tensorflow as tf
+# import tensorflow as tf
 from tensorflow import keras
 
 # ヘルパーライブラリのインポート
@@ -42,10 +42,13 @@ def plot_image(i, predictions_array, true_label, img):
     else:
         color = 'red'
 
-    plt.xlabel("{} {:2.0f}% ({})".format(class_names[predicted_label],
-                                         100*np.max(predictions_array),
-                                         class_names[true_label]),
-               color=color)
+    plt.xlabel("{} {:2.0f}% ({})".format(
+        class_names[predicted_label],
+        100*np.max(predictions_array),
+        class_names[true_label]
+    ),
+        color=color
+    )
 
 
 def plot_value_array(i, predictions_array, true_label):
@@ -69,6 +72,8 @@ fashion_mnist = keras.datasets.fashion_mnist
 class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress',
                'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 
+
+print(train_images[0])
 print(train_images.shape, train_labels.shape)
 
 
